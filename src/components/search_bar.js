@@ -5,6 +5,8 @@ import { searchDoctor } from '../actions';
 
 class SearchBar extends Component {
   renderField(field) {
+    const { meta: { touched, error }} = field;
+
     return (
       <div>
         <label>Find Doctor</label>
@@ -18,9 +20,16 @@ class SearchBar extends Component {
   }
 
 
+  onSubmit(values) {
+    this.props.searchDoctor(values);
+  }
+
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
-      <form>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
           label="Search Query"
           name="query"
@@ -30,6 +39,8 @@ class SearchBar extends Component {
       </form>
     );
   }
+
+
 }
 
 export default reduxForm({
