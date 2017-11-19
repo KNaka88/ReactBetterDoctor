@@ -17,7 +17,6 @@ class ResultList extends Component {
   render() {
     return(
       <div>
-        <p>Result</p>
         {this.renderPosts()}
       </div>
     );

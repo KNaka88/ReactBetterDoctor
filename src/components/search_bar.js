@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { searchDoctor } from '../actions';
+import _ from 'lodash';
+
 
 class SearchBar extends Component {
   renderField(field) {
     const { meta: { touched, error }} = field;
+    const className = `form-group ${touched && error ? 'has-danger' : ''}`;
 
     return (
-      <div>
-        <label>Find Doctor</label>
+      <div className={className}>
+        <label>{field.label}</label>
         <input
           className="form-control"
           type="text"
           {...field.input}
         />
+        <div className="text-help">
+          {touched ? error : ''}
+        </div>
       </div>
     );
   }
@@ -39,11 +45,22 @@ class SearchBar extends Component {
       </form>
     );
   }
-
-
 }
 
+
+function validate(values) {
+  const errors = {};
+
+  if (!values.query) {
+    errors.query = "Enter a keyword";
+  }
+
+  return errors;
+}
+
+
 export default reduxForm({
+  validate,  // validate : validate
   form: 'SearchDoctorForm'
 })(
   connect(null, { searchDoctor })(SearchBar)
