@@ -3,21 +3,30 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 
-
 class ResultList extends Component {
 
-  renderPosts() {
+  renderDoctors() {
     return _.map(this.props.doctors, doctor => {
-      return(
-        <li key={doctor.uid}>{doctor.profile.first_name}</li>
-      )
+      console.log(doctor);
+      const full_name = `${doctor.profile.first_name} ${doctor.profile.middle_name} ${doctor.profile.last_name}`;
+      const title = doctor.profile.title;
+      const image_url = doctor.profile.image_url;
+
+      return (
+        <div key={doctor.uid}>
+          <Link to={`doctors/${doctor.uid}`}>
+            <li>{full_name}, {title}</li>
+            <img src={image_url} alt={full_name} />
+          </Link>
+        </div>
+      );
     });
   }
 
   render() {
-    return(
+    return (
       <div>
-        {this.renderPosts()}
+        {this.renderDoctors()}
       </div>
     );
   }
