@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import App from './components/app';
+import DoctorDetail from './containers/doctor_detail';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -15,6 +16,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
+          <Route path="/doctor" component={DoctorDetail} />
           <Route path="/" component={App} />
         </Switch>
       </div>

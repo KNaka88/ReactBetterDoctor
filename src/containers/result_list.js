@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { bindActionCreators } from 'redux';
 import { selectDoctor } from '../actions/index';
+import { Link } from 'react-router-dom';
 
 class ResultList extends Component {
 
@@ -16,7 +17,7 @@ class ResultList extends Component {
         <div key={doctor.uid}>
             <li>{full_name}, {title}</li>
             <img src={image_url} alt={full_name} />
-            <p onClick={() => this.props.selectDoctor(doctor)}>See Detail</p>
+            <Link to="/doctor" onClick={() => this.props.selectDoctor(doctor)}>See Detail</Link>
         </div>
       );
     });
