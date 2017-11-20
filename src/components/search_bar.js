@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
 
   onSubmit(values) {
-    this.props.searchDoctor(values);
+    this.props.searchDoctor(values.sympton);
   }
 
 
@@ -38,7 +38,7 @@ class SearchBar extends Component {
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
           label="Search Query"
-          name="query"
+          name="sympton"
           component={this.renderField}
         />
         <button type="submit" className="btn btn-success">Search</button>
@@ -51,8 +51,8 @@ class SearchBar extends Component {
 function validate(values) {
   const errors = {};
 
-  if (!values.query) {
-    errors.query = "Enter a keyword";
+  if (!values.sympton) {
+    errors.sympton = "Enter a keyword";
   }
 
   return errors;
