@@ -1,0 +1,20 @@
+.profile {
+
+}
+
+.profile > img {
+  border-radius: 100%;
+}
+
+.profile__detail {
+  height: 10rem;
+  overflow: auto;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 1px 1px lightgray;
+}
+
+.profile__detail > p {
+  line-height: 2.0rem;
+  padding: 1rem;
+}
