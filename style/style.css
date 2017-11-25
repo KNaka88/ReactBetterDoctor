@@ -1,16 +1,14 @@
 /** APP.js **/
 
 .title {
-  margin-top: 2rem;
+  font-size: 5rem;
+  margin-top: 8%;
+  margin-bottom: 5rem;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1rem;
 }
 
-
-
-
-.doctors {
-
-}
 
 .doctors_summary {
   border: 2px solid black;
@@ -49,4 +47,13 @@
 .profile__detail > p {
   line-height: 2.0rem;
   padding: 1rem;
+}
+
+.search_bar {
+  margin-bottom: 5rem;
+}
+
+.text-help {
+  margin-top: 0.3rem;
+  text-align: center;
 }

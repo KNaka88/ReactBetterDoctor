@@ -8,7 +8,7 @@ import _ from 'lodash';
 class SearchBar extends Component {
   renderField(field) {
     const { meta: { touched, error }} = field;
-    const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+    const className = `form-group ${touched && error ? 'has-danger search_bar' : 'search_bar'}`;
 
     return (
       <div className={className}>
