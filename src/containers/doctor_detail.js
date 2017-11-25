@@ -1,39 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import DoctorSpecialties from '../components/doctor_specialties';
+import DoctorEducations from '../components/doctor_educations';
+import DoctorProfile from '../components/doctor_profile';
 
 class DoctorDetail extends Component {
 
   renderDoctor() {
-    // const full_name = `${doctor.profile.first_name} ${doctor.profile.middle_name} ${doctor.profile.last_name}`;
-    // const title = doctor.profile.title;
-    // const image_url = doctor.profile.image_url;
-    // const
 
     const { first_name, middle_name, last_name, title, bio, gender, image_url, languages } = this.props.doctor.profile;
-    const { educations } = this.props.doctor.educations;
-    const { practices } = this.props.doctor.practices;
-    const { specialties } = this.props.doctor.specialties;
+    const { educations, practices, specialties } = this.props.doctor;
     const full_name = `${first_name} ${middle_name} ${last_name}, ${title}`;
 
-    console.log(specialties);
     return (
-      <div className="profile">
-        <h2>{full_name}</h2>
-        <img src={image_url} alt={first_name} />
-        <div className="profile__detail">
-          <p>{bio}</p>
-        </div>
+      <div>
+        <DoctorProfile full_name={full_name} bio={bio} image_url={image_url}></DoctorProfile>
+        <DoctorEducations educations={educations}></DoctorEducations>
+        <DoctorSpecialties specialties={specialties}></DoctorSpecialties>
       </div>
     );
-
   }
 
   render(){
     if (!this.props.doctor) {
-      return <div>Select a doctor to get started</div>;
+      return (
+        <div>
+          <p>Doctor is not selected</p>
+          <Link to="/">Home</Link>
+        </div>
+      )
     }
-    console.log(this.props.doctor);
+
     return (
       <div>
         {this.renderDoctor()}
