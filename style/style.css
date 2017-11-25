@@ -1,7 +1,39 @@
-.profile {
+/** APP.js **/
+
+.title {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+
+
+
+.doctors {
 
 }
-npm
+
+.doctors_summary {
+  border: 2px solid black;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  transition: all .1s ease;
+}
+
+.doctors_summary > li {
+  list-style: none;
+}
+
+.doctors_summary > img {
+  border-radius: 100%;
+  margin-left: 1rem;
+}
+
+.doctors_summary:hover {
+  transform: scale(1.03, 1.03);
+  transition: all .1s ease;
+}
+
 .profile > img {
   border-radius: 100%;
 }

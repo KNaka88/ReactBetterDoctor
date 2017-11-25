@@ -14,10 +14,13 @@ class ResultList extends Component {
       const image_url = doctor.profile.image_url;
 
       return (
-        <div key={doctor.uid}>
-            <li>{full_name}, {title}</li>
-            <img src={image_url} alt={full_name} />
-            <Link to="/doctor" onClick={() => this.props.selectDoctor(doctor)}>See Detail</Link>
+        <div>
+          <Link  to="/doctor" onClick={() => this.props.selectDoctor(doctor)}>
+            <div key={doctor.uid} className="doctors_summary panel panel-default">
+              <li>{full_name}, {title}</li>
+              <img src={image_url} alt={full_name} />
+            </div>
+          </Link>
         </div>
       );
     });
@@ -25,7 +28,7 @@ class ResultList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="doctors">
         {this.renderDoctors()}
       </div>
     );

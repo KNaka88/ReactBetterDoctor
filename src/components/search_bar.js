@@ -12,12 +12,15 @@ class SearchBar extends Component {
 
     return (
       <div className={className}>
-        <label>{field.label}</label>
-        <input
-          className="form-control"
-          type="text"
-          {...field.input}
-        />
+        <div className="col-xs-6 col-xs-offset-3">
+          <input
+            placeholder="ex. Headache"
+            className="form-control"
+            type="text"
+            {...field.input}
+          />
+        </div>
+        <button type="submit" className="btn btn-success">Search</button>
         <div className="text-help">
           {touched ? error : ''}
         </div>
@@ -41,7 +44,6 @@ class SearchBar extends Component {
           name="sympton"
           component={this.renderField}
         />
-        <button type="submit" className="btn btn-success">Search</button>
       </form>
     );
   }
