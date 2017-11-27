@@ -12,7 +12,7 @@ class SearchBar extends Component {
 
     return (
       <div className={className}>
-        <div className="col-xs-6 col-xs-offset-3">
+        <div className="col-sm-6 col-sm-offset-3">
           <input
             placeholder="ex. Headache"
             className="form-control"
@@ -20,7 +20,9 @@ class SearchBar extends Component {
             {...field.input}
           />
         </div>
-        <button type="submit" className="btn btn-success">Search</button>
+        <div className="search_bar_button">
+          <button type="submit" className="btn btn-success">Search</button>
+        </div>
         <div className="text-help">
           {touched ? error : ''}
         </div>

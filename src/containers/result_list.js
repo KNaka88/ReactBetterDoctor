@@ -9,15 +9,16 @@ class ResultList extends Component {
 
   renderDoctors() {
     return _.map(this.props.doctors, (doctor, index) => {
-      const full_name = `${doctor.profile.first_name} ${doctor.profile.middle_name} ${doctor.profile.last_name}`;
-      const title = doctor.profile.title;
-      const image_url = doctor.profile.image_url;
+      console.log(doctor);
+
+      const {first_name, middle_name, last_name, title, image_url} = doctor.profile;
+      const full_name = `${first_name} ${middle_name ? middle_name :'' } ${last_name}`;
 
       return (
         <div key={index}>
           <Link  to="/doctor" onClick={() => this.props.selectDoctor(doctor)}>
             <div key={doctor.uid} className="doctors_summary panel panel-default">
-              <li>{full_name}, {title}</li>
+              <li className="doctors_summary_name">{full_name}, {title}</li>
               <img src={image_url} alt={full_name} />
             </div>
           </Link>
@@ -29,6 +30,7 @@ class ResultList extends Component {
   render() {
     return (
       <div className="doctors">
+        <div className="short_line_break"></div>
         {this.renderDoctors()}
       </div>
     );
