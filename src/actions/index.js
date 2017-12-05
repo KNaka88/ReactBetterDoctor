@@ -1,5 +1,5 @@
 import axios from 'axios';
-import API_KEY from '../../api_keys';
+import API_KEY from '../../api_key';
 
 
 export const FIND_DOCTOR = 'find_doctor';

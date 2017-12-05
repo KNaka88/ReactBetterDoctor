@@ -21,7 +21,7 @@ You will need the following things properly installed on your computer.
 ```
 > $git clone https://github.com/KNaka88/ReactBetterDoctor.git
 > $cd ReactBetterDoctor
-> Change the filename from api_keys_template.js to api_keys.js and insert your BetterDoctor API Key
+> Insert your BetterDoctor API Key to api_key.js
 > $npm install
 > $npm start
 ```
