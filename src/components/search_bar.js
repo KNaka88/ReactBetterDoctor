@@ -9,8 +9,9 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: "",
-      lng: ""
+      lat: "45.5186307",
+      lng: "-122.6960944",
+      status:"Obtaining current location..."
     }
     this.setCurrentLocation = this.setCurrentLocation.bind(this);
   }
@@ -24,7 +25,8 @@ class SearchBar extends Component {
   setCurrentLocation(pos) {
     this.setState((prevState, props) => ({
         lat: pos.coords.latitude,
-        lng: pos.coords.longitude
+        lng: pos.coords.longitude,
+        status: ""
       }));
   }
 
@@ -61,13 +63,16 @@ class SearchBar extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <Field
-          label="Search Query"
-          name="sympton"
-          component={this.renderField}
-        />
-      </form>
+      <div>
+        <p className="status_message">{this.state.status}</p>
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+          <Field
+            label="Search Query"
+            name="sympton"
+            component={this.renderField}
+          />
+        </form>
+      </div>
     );
   }
 }
