@@ -6,6 +6,28 @@ import _ from 'lodash';
 
 
 class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lat: "",
+      lng: ""
+    }
+    this.setCurrentLocation = this.setCurrentLocation.bind(this);
+  }
+
+  componentDidMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setCurrentLocation);
+    }
+  }
+
+  setCurrentLocation(pos) {
+    this.setState((prevState, props) => ({
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      }));
+  }
+
   renderField(field) {
     const { meta: { touched, error }} = field;
     const className = `form-group ${touched && error ? 'has-danger search_bar' : 'search_bar'}`;
@@ -32,13 +54,12 @@ class SearchBar extends Component {
 
 
   onSubmit(values) {
-    this.props.searchDoctor(values.sympton);
+    this.props.searchDoctor(values.sympton, this.state.lat, this.state.lng);
   }
 
 
   render() {
     const { handleSubmit } = this.props;
-
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
