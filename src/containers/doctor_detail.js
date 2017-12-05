@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import DoctorSpecialties from '../components/doctor_specialties';
 import DoctorEducations from '../components/doctor_educations';
 import DoctorProfile from '../components/doctor_profile';
+import DoctorBio from '../components/doctor_bio';
 
 class DoctorDetail extends Component {
 
@@ -14,10 +15,11 @@ class DoctorDetail extends Component {
     const full_name = `${first_name} ${middle_name} ${last_name}, ${title}`;
 
     return (
-      <div>
+      <div className="doctor_detail">
         <DoctorProfile full_name={full_name} bio={bio} image_url={image_url}></DoctorProfile>
         <DoctorEducations educations={educations}></DoctorEducations>
         <DoctorSpecialties specialties={specialties}></DoctorSpecialties>
+        <DoctorBio bio={bio}></DoctorBio>
       </div>
     );
   }
@@ -27,7 +29,9 @@ class DoctorDetail extends Component {
       return (
         <div>
           <p>Doctor is not selected</p>
-          <Link to="/">Home</Link>
+          <div className="text-center home_link">
+            <Link to="/">Home</Link>
+          </div>
         </div>
       )
     }
@@ -35,7 +39,9 @@ class DoctorDetail extends Component {
     return (
       <div>
         {this.renderDoctor()}
-        <Link to="/">Home</Link>
+        <div className="text-center home_link">
+          <Link to="/">Home</Link>
+        </div>
       </div>
     )
   };

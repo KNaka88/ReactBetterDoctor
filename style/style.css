@@ -49,17 +49,42 @@
   border-radius: 100%;
 }
 
-.profile__detail {
-  height: 10rem;
-  overflow: auto;
-  border: 2px solid lightgray;
-  border-radius: 5px;
-  box-shadow: 1px 1px lightgray;
+.doctor_profile > img {
+  display: block;
+  margin: 3% auto 3% auto;
+  border-radius: 100%;
+}
+
+.doctor_detail {
+  border: 2px solid lightblue;
+  box-shadow: lightblue 0px 0px 1px 1px;
+  padding: 2rem;
+  display: block;
+  margin: 3% auto 3% auto;
+  max-width: 80%;
+  line-height: 2rem;
+}
+
+.doctor_detail h3 {
+  padding-top: 1rem;
+}
+
+
+.doctor_bio {
+  /*display: block;
+  margin: 3% auto 3% auto;
+  max-width: 80%;
+  line-height: 2rem;*/
+}
+
+.home_link {
+  margin-top: 4%;
 }
 
 .profile__detail > p {
   line-height: 2.0rem;
   padding: 1rem;
+  margin-bottom: 4%;
 }
 
 .search_bar {
@@ -74,6 +99,10 @@
 
 .text-help {
   margin-top: 0.3rem;
+  text-align: center;
+}
+
+.text-center {
   text-align: center;
 }
 
@@ -101,6 +130,11 @@
     top: 0rem;
     font-size: 1rem;
   }
+
+  .doctor_profile__bio {
+    max-width: 90%;
+  }
+
 
   .search_bar {
     margin-bottom: 5rem;
