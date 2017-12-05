@@ -1,25 +1,51 @@
-# ReduxSimpleStarter
+# BetterDoctor React
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+#### Koji Nakagawa
+
+## Description
+* This program search doctors by query and your current location.
+
+![Alt text](./images/image1.png "image1")
+
+![Alt text](./images/image2.png "image2")
+
+
+## Prerequisites
+You will need the following things properly installed on your computer.
+
+* [BetterDoctor API Key](https://developer.betterdoctor.com/)
+* [Node.js 6.10~](https://nodejs.org/) (with NPM)
+
 
 ### Getting Started
-
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
+> $git clone https://github.com/KNaka88/ReactBetterDoctor.git
+> $cd ReactBetterDoctor
+> Change the filename from api_keys_template.js to api_keys.js and insert your BetterDoctor API Key
+> $npm install
+> $npm start
 ```
+## Technologies Used
+  * React/Redux
+  * npm
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+## License
+  _Copyright (c) 2017 **Koji Nakagawa**_
 
-```
-> npm install
-> npm start
-```
+  _Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:_
+
+  _The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software._
+
+  _THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE._
